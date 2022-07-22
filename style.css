@@ -1,0 +1,121 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #0f0f10;
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* 
+$white: #ffffff;
+$darkWhite: #f6f8f9;
+$black: #0f0f10;
+$blue: #101321;
+$lightblue: #2980b9; 
+*/
+
+header {
+    width: 100vw;
+    height: 75px;
+    background-color: #0f0f10;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f6f8f9;
+}
+
+#welcome-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0px;
+}
+
+#stats-container {
+    margin: 0px 10%;
+}
+
+#stats-container div {
+    box-shadow: 0 1px 2px 0 rgb(209 209 209 / 50%);
+}
+
+#stats-container #total-messages {
+    text-align: center;
+    font-size: 1.25rem;
+    background-color: #ffffff;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+#chats-container {
+    margin: 20px 0px;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    height: 50vh;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#chats-container h3 {
+    padding: 10px;
+    background-color: #0f0f10;
+    color: #f6f8f9;
+    font-size: 1.25rem;
+}
+
+#top-chatters,
+#top-online-chatters,
+#top-offline-chatters {
+    gap: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+#top-chatters-container div,
+#top-online-chatters-container div,
+#top-offline-chatters-container div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.5fr 4fr 1.5fr;
+}
+
+#top-chatters-container p:first-child {
+    background-color: #2980b9;
+    width: 50px;
+    text-align: center;
+}
+#top-online-chatters-container p:first-child {
+    background: #c09acb;
+    width: 50px;
+    text-align: center;
+}
+#top-offline-chatters-container p:first-child {
+    background: #90ee90;
+    width: 50px;
+    text-align: center;
+}
+
+#chats-container p {
+    padding: 10px;
+    border-top: 1px rgb(209 209 209 / 50%) solid;
+}
+
+#chats-container p:first-child {
+    border: none;
+    margin-right: 10px;
+}
+
+#chats-container p:last-child {
+    text-align: right;
+    padding-right: 20px;
+}

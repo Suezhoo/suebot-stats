@@ -6,21 +6,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Suebot - Stats</title>
         <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <h1>Welcome to Suebot!</h1>
-
-        <div>
-            <h3>TOTAL MESSAGES</h3>
-            <p id="total-lifetime-messages"></p>
+        <header></header>
+        <div id="welcome-text">
+            <h1>SueBot Chat Stats</h1>
+            <p>Recording chats from Twitch Chat since, Friday 22nd 2022</p>
         </div>
-        <div>
-            <h3>TOP CHATTERS</h3>
-            <div id="top-chatters-container"></div>
-            <h3>TOP ONLINE CHATTERS</h3>
-            <div id="top-online-chatters-container"></div>
-            <h3>TOP OFFLINE CHATTERS</h3>
-            <div id="top-offline-chatters-container"></div>
+
+        <div id="stats-container">
+            <div id="total-messages">
+                <h3>TOTAL MESSAGES</h3>
+                <p id="total-lifetime-messages"></p>
+            </div>
+            <div id="chats-container">
+                <div id="top-chatters">
+                    <h3>TOP CHATTERS</h3>
+                    <div id="top-chatters-container"></div>
+                </div>
+                <div id="top-online-chatters">
+                    <h3>TOP ONLINE CHATTERS</h3>
+                    <div id="top-online-chatters-container"></div>
+                </div>
+                <div id="top-offline-chatters">
+                    <h3>TOP OFFLINE CHATTERS</h3>
+                    <div id="top-offline-chatters-container"></div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
