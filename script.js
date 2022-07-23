@@ -13,7 +13,12 @@ async function updateHtml() {
 
     const total_messages = document.querySelector("#total-lifetime-messages");
 
-    await fetch(`${url}/chatters?streamState=all`)
+    await fetch(`${url}/chatters?streamState=all`, {
+        method: "get",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
         .then((res) => res.json())
         .then((data) => {
             if (data.error) {
