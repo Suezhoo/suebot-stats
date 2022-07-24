@@ -22,10 +22,18 @@ header {
     background-color: #0f0f10;
 }
 
+footer {
+    margin-top: 100px;
+    width: 100vw;
+    height: 75px;
+    background-color: #0f0f10;
+}
+
 body {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     background-color: #f6f8f9;
+    overflow-x: hidden;
 }
 
 #welcome-text {
@@ -36,15 +44,18 @@ body {
     margin: 50px 0px;
 }
 
-#stats-container {
+#total-stats-container,
+#monthly-stats-container {
     margin: 0px 10%;
 }
 
-#stats-container div {
-    box-shadow: 0 1px 2px 0 rgb(209 209 209 / 50%);
+#lifetime-chats-container > div,
+#monthly-chats-container > div {
+    box-shadow: 0px 1px 2px 0px rgb(209 209 209 / 50%);
 }
 
-#stats-container #total-messages {
+#total-stats-container #total-messages,
+#monthly-stats-container #monthly-messages {
     text-align: center;
     font-size: 1.25rem;
     background-color: #ffffff;
@@ -52,7 +63,8 @@ body {
     width: 100%;
 }
 
-#chats-container {
+#lifetime-chats-container,
+#monthly-chats-container {
     margin: 20px 0px;
     display: grid;
 
@@ -63,16 +75,20 @@ body {
     border-radius: 10px;
 }
 
-#chats-container h3 {
+#lifetime-chats-container h3,
+#monthly-chats-container h3 {
     padding: 10px;
     background-color: #0f0f10;
     color: #f6f8f9;
     font-size: 1.25rem;
 }
 
-#top-chatters,
-#top-online-chatters,
-#top-offline-chatters {
+#top-lifetime-chatters,
+#top-lifetime-online-chatters,
+#top-lifetime-offline-chatters,
+#top-monthly-chatters,
+#top-monthly-online-chatters,
+#top-monthly-offline-chatters {
     gap: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -81,41 +97,71 @@ body {
     background-color: #ffffff;
 }
 
-#top-chatters-container div,
-#top-online-chatters-container div,
-#top-offline-chatters-container div {
+#top-lifetime-chatters-container div,
+#top-lifetime-online-chatters-container div,
+#top-lifetime-offline-chatters-container div,
+#top-monthly-chatters-container div,
+#top-monthly-online-chatters-container div,
+#top-monthly-offline-chatters-container div {
     width: 100%;
     display: grid;
     grid-template-columns: 0.5fr 4fr 1.5fr;
 }
 
-#top-chatters-container p:first-child {
+#top-lifetime-chatters-container p:first-child {
     background-color: #2980b9;
     width: 50px;
     text-align: center;
 }
-#top-online-chatters-container p:first-child {
+#top-lifetime-online-chatters-container p:first-child {
     background: #c09acb;
     width: 50px;
     text-align: center;
 }
-#top-offline-chatters-container p:first-child {
+#top-lifetime-offline-chatters-container p:first-child {
     background: #90ee90;
     width: 50px;
     text-align: center;
 }
+#top-monthly-chatters-container p:first-child {
+    background-color: #fffdc4;
+    width: 50px;
+    text-align: center;
+}
+#top-monthly-online-chatters-container p:first-child {
+    background: #fe9aa3;
+    width: 50px;
+    text-align: center;
+}
+#top-monthly-offline-chatters-container p:first-child {
+    background: #75ffff;
+    width: 50px;
+    text-align: center;
+}
 
-#chats-container p {
+#lifetime-chats-container p,
+#monthly-chats-container p {
     padding: 10px;
     border-top: 1px rgb(209 209 209 / 50%) solid;
 }
 
-#chats-container p:first-child {
+#lifetime-chats-container p:first-child,
+#monthly-chats-container p:first-child {
     border: none;
     margin-right: 10px;
 }
 
-#chats-container p:last-child {
+#lifetime-chats-container p:last-child,
+#monthly-chats-container p:last-child {
     text-align: right;
     padding-right: 20px;
+}
+
+/* LOADING */
+.loading {
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: none;
 }
