@@ -7,10 +7,10 @@ window.onload = () => {
 };
 
 async function updateHtml() {
-    await displayLifetimeStats();
     const month = new Date().getMonth();
     const year = new Date().getFullYear();
-    await displayMonthlyStats(month, year);
+    displayMonthlyStats(month, year);
+    displayLifetimeStats();
 }
 
 async function displayLifetimeStats() {
@@ -20,7 +20,7 @@ async function displayLifetimeStats() {
     const top_lifetime_online_chatters_container = document.querySelector("#top-lifetime-online-chatters-container");
     const top_lifetime_offline_chatters_container = document.querySelector("#top-lifetime-offline-chatters-container");
 
-    await fetch(`${url}/chatters?streamState=all`, {
+    fetch(`${url}/chatters?streamState=all`, {
         method: "get",
         headers: {
             "Content-Type": "application/json",
@@ -91,7 +91,7 @@ async function displayMonthlyStats(month, year) {
 
     monthly_messages_text.textContent = `${monthName.toUpperCase()}'S MONTHLY MESSAGES`;
 
-    await fetch(`${url}/chats/filter?month=${month + 1}&year=${year}`)
+    fetch(`${url}/chats/filter?month=${month + 1}&year=${year}`)
         .then((res) => res.json())
         .then((data) => {
             if (data.error) {
