@@ -38,7 +38,7 @@ async function displayLifetimeStats() {
             top_lifetime_online_chatters_container.innerHTML = "";
             top_lifetime_offline_chatters_container.innerHTML = "";
 
-            total_lifetime_messages.textContent = data.total_all_messages;
+            total_lifetime_messages.textContent = data.total_all_messages.toLocaleString();
             //
             if (data.all_chat.length > 0) {
                 const top_chatters = data.all_chat.sort((a, b) => b.messages.length - a.messages.length);
@@ -46,7 +46,7 @@ async function displayLifetimeStats() {
                     top_lifetime_chatters_container.innerHTML += `<div>
                 <p>${index + 1}</p>
                 <p>${chatter.sender}</p>
-                <p>${chatter.messages.length}</p>
+                <p>${chatter.messages.length.toLocaleString()}</p>
                 </div>`;
                 });
             }
@@ -57,7 +57,7 @@ async function displayLifetimeStats() {
                     top_lifetime_online_chatters_container.innerHTML += `<div>
                 <p>${index + 1}</p>
                 <p>${chatter.sender}</p>
-                <p>${chatter.messages.length}</p>
+                <p>${chatter.messages.length.toLocaleString()}</p>
                 </div>`;
                 });
             }
@@ -68,7 +68,7 @@ async function displayLifetimeStats() {
                     top_lifetime_offline_chatters_container.innerHTML += `<div>
                 <p>${index + 1}</p>
                 <p>${chatter.sender}</p>
-                <p>${chatter.messages.length}</p>
+                <p>${chatter.messages.length.toLocaleString()}</p>
                 </div>`;
                 });
             }
@@ -99,7 +99,7 @@ async function displayMonthlyStats(month, year) {
                 console.log(data);
                 return;
             }
-            total_monthly_messages.textContent = data.total_all_messages;
+            total_monthly_messages.textContent = data.total_all_messages.toLocaleString();
             // STOP LOADING
             top_monthly_all_chatters_container.innerHTML = "";
             top_monthly_online_chatters_container.innerHTML = "";
@@ -110,7 +110,7 @@ async function displayMonthlyStats(month, year) {
                     top_monthly_all_chatters_container.innerHTML += `<div>
                     <p>${index + 1}</p>
                     <p>${chatter.sender}</p>
-                    <p>${chatter.messages.length}</p>
+                    <p>${chatter.messages.length.toLocaleString()}</p>
                     </div>`;
                 });
             }
@@ -120,7 +120,7 @@ async function displayMonthlyStats(month, year) {
                     top_monthly_online_chatters_container.innerHTML += `<div>
                     <p>${index + 1}</p>
                     <p>${chatter.sender}</p>
-                    <p>${chatter.messages.length}</p>
+                    <p>${chatter.messages.length.toLocaleString()}</p>
                     </div>`;
                 });
             }
@@ -130,7 +130,7 @@ async function displayMonthlyStats(month, year) {
                     top_monthly_offline_chatters_container.innerHTML += `<div>
                     <p>${index + 1}</p>
                     <p>${chatter.sender}</p>
-                    <p>${chatter.messages.length}</p>
+                    <p>${chatter.messages.length.toLocaleString()}</p>
                     </div>`;
                 });
             }
