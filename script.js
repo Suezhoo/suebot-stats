@@ -106,7 +106,8 @@ async function displayMonthlyStats(month, year) {
             top_monthly_offline_chatters_container.innerHTML = "";
             //
             if (data.monthly_all_chat.length > 0) {
-                data.monthly_all_chat.forEach((chatter, index) => {
+                const monthly_all_chat = data.monthly_all_chat.sort((a, b) => b.messages.length - a.messages.length);
+                monthly_all_chat.forEach((chatter, index) => {
                     top_monthly_all_chatters_container.innerHTML += `<div>
                     <p>${index + 1}</p>
                     <p>${chatter.sender}</p>
@@ -116,7 +117,8 @@ async function displayMonthlyStats(month, year) {
             }
             //
             if (data.monthly_online_chat.length > 0) {
-                data.monthly_online_chat.forEach((chatter, index) => {
+                const monthly_online_chat = data.monthly_online_chat.sort((a, b) => b.messages.length - a.messages.length);
+                monthly_online_chat.forEach((chatter, index) => {
                     top_monthly_online_chatters_container.innerHTML += `<div>
                     <p>${index + 1}</p>
                     <p>${chatter.sender}</p>
@@ -126,7 +128,8 @@ async function displayMonthlyStats(month, year) {
             }
             //
             if (data.monthly_offline_chat.length > 0) {
-                data.monthly_offline_chat.forEach((chatter, index) => {
+                const monthly_offline_chat = data.monthly_offline_chat.sort((a, b) => b.messages.length - a.messages.length);
+                monthly_offline_chat.forEach((chatter, index) => {
                     top_monthly_offline_chatters_container.innerHTML += `<div>
                     <p>${index + 1}</p>
                     <p>${chatter.sender}</p>
